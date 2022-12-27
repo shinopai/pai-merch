@@ -1,0 +1,18 @@
+@import "_basic";
+@import "_mixin";
+
+/* header */
+.header {
+  background-color: #222529;
+  padding: 10px 0;
+  &__heading {
+    @include fs-24;
+    color: #fff;
+    margin: 0;
+  }
+}
+
+/* main */
+.main {
+  padding: 30px 0;
+}

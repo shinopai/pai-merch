@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         // $this->call(CategoryTableSeeder::class);
-        $this->call(MakerTableSeeder::class);
+        // $this->call(MakerTableSeeder::class);
+        $this->call(ItemTableSeeder::class);
     }
 }

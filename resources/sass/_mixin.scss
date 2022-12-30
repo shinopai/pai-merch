@@ -10,3 +10,13 @@
 @mixin fs-24() {
   font-size: clamp(2.2rem, 2.127rem + 0.36vw, 2.4rem);
 }
+
+/* font size 18px */
+@mixin fs-18() {
+  font-size: clamp(1.6rem, 1.527rem + 0.36vw, 1.8rem);
+}
+
+/* font size 14px */
+@mixin fs-14() {
+  font-size: clamp(1.2rem, 1.127rem + 0.36vw, 1.4rem);
+}

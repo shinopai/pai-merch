@@ -1,10 +1,11 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.app') @section('content')
 <div class="flex-wrap flex">
   @include('partial._search_form')
   <div class="list-wrap">
     <table class="list">
+      <caption class="list__heading">
+        検索結果
+      </caption>
       <thead>
         <tr>
           <th>ID</th>
@@ -16,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($items as $item)
+        @forelse($items as $item)
         <tr>
           <td>{{ $item->id }}</td>
           <td>{{ $item->category->name }}</td>
@@ -25,10 +26,19 @@
           <td>{{ $item->price }}</td>
           <td>{{ $item->created_at->format('Y年m月d日') }}</td>
         </tr>
-        @endforeach
+        @empty
+        <tr>
+          <td rowspan="6">概要の商品はありません</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        @endforelse
       </tbody>
     </table>
-    {{ $items->links() }}
+    {{ $items->appends(request()->query())->links() }}
   </div>
 </div>
 @endsection
